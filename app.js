@@ -23,6 +23,30 @@ document.addEventListener("DOMContentLoaded", event => {
     document.querySelector("#btnLearn").addEventListener("click", event => {
         location.href = "https://frontendmasters.com";
     })
+    let bigEvent;
+    window.addEventListener("beforeinstallprompt",event=>{
+            event.preventDefault()
+            bigEvent=event
+    })
+    document.querySelector("#btnInstall").addEventListener("click",event=>{
+        if(bigEvent){
+            bigEvent.prompt()
+        }else{
+            alert("Try installation using Add to HomeScreen")
+        }
+    })
+    document.querySelector("#btnShare").addEventListener("click",event=>{
+        let notesStrig="";
+        for(let note of notes){
+            notesStrig+=note
+        }
+        if(navigator.canShare){
+        navigator.share({
+        title:"Codepad",
+        text:notesStrig
+        })
+    }
+    })
 })
 
 // Render the notes on the DOM
