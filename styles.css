@@ -116,5 +116,10 @@ body>#toolbar {
     env(safe-area-inset-bottom) 
     env(safe-area-inset-left) !important;
 }
+@mediascreen (display : standalone){
+    #btnInstall{
+        display: none;
+    }
+}
 
 

@@ -22,5 +22,13 @@
         "type":"image/png",
         "purpose":"maskable"
         }
+    ],
+    "description":"This app lets you saving notes",
+    "screenshot":[
+        {
+        "src":"icons/screenshot.png",
+        "sizes":"1170x5032",
+        "type":"image/png"
+        } 
     ]
 }
